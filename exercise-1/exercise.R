@@ -15,7 +15,7 @@ game.scores <- data.frame(scored, against)
 game.scores$diff <- c(scored - against)
 
 # Create a new column "won" which is TRUE if the Seahawks wom
-game.scores$won <- c((scored-against) > 0)
+game.scores$won <- c(scored > against)
 
 # Create a vector of the opponents
 opponents <- c("Dolphins", "Rams", "49ers", "Jets")
