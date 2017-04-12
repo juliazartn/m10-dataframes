@@ -38,9 +38,25 @@ max1960 <- max(us.dataframe['X1960'])
 
 # Write a function that takes in a year as a parameter, and 
 # returns the highest spending category of that year
+max.spending <- function(year) {
+  colname <- paste("X", year, sep="")
+  maxval <- max(us.dataframe[colname])
+  return (maxval)
+}
 
 # Using your function, determine the highest spending category of each year
-
+max.spending(1940)
+max.spending(1945)
+max.spending(1950)
+max.spending(1960)
 
 # Write a loop to cycle through the years, and store the highest spending category of
 # each year in a list
+highest.spending <- list()
+for(year in c(1940, 1945, 1950, 1960)) {
+  colname <- paste("X", year, sep="")
+  highest.spending[colname] <- max.spending(year)
+}
+
+
+
